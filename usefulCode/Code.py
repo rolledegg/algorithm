@@ -1,4 +1,3 @@
-
 '''
 == 알파벳 순서를 정수 순서로 바꾸는 방법 ==
 '''
@@ -7,6 +6,12 @@ for i in alpabet:
     # ord(): 문자의 아스키 코드값을 리턴하는 함수
     aToInt = ord(i) - ord('a') + 1
     print(aToInt)
+
+'''
+== [N][M]크기의 리스트 초기화 => list Comprehension
+'''
+M, N = 5, 5
+array = [[0] * M for _ in range(N)]
 
 ''' 
 == 시뮬레이션 유형 (일련의 명령에 따라서 개체를 차례대로 이동시킨다) ==
@@ -24,11 +29,10 @@ steps = [(1, 2), (1, -2), (-1, 2), (-1, -2), (2, 1), (2, -1), (-2, 1), (-2, -1)]
 
 # 3.이동 후의 좌표 구하기
 for i in range(len(steps)):
-    nextX = nowX+ steps[i][0]
+    nextX = nowX + steps[i][0]
     nextY = nowY + steps[i][1]
     # 공간 벗어나면 무시 / 카운트 x
-    if(nextX<1 or nextY<1 or nextX>8 or nextY>8):
+    if (nextX < 1 or nextY < 1 or nextX > 8 or nextY > 8):
         continue
     # 이동
     nowX, nowY = nextX, nextY
-
