@@ -30,10 +30,9 @@ if __name__ == '__main__':
     '''
 
     # 퀵 정렬
-    # 시간 복잡도
-
+    # 시간 복잡도 O(NlogN)
+    '''
     arr = [3, 5, 1, 8, 9, 0, 2, 4]
-
 
     def quick_sort(arr, start, end):
         if (start >= end):
@@ -74,3 +73,65 @@ if __name__ == '__main__':
 
     # quick_sort(arr, 0, len(arr) - 1)
     print(quick_sort2(arr))
+    '''
+
+    # 계수 정렬
+    # O(N+K)
+    # 책에서는 mim을 당연히 0으로 생각하고 있음 (아마 범위가 거의 정수이기 때문?)
+    # 나는 mim이 0이 아닌경우를 고려해서 작성했음
+    '''
+    arr = [7, 5, 9, 3, 3, 1, 6, 2, 11, 1, 4, 8, 7, 5, 2]
+    min_value = min(arr)
+    max_value = max(arr)
+
+    range_arr = [0 for _ in range(max_value - min_value + 1)]
+
+    for i in arr:
+        range_arr[i - min_value] += 1
+
+    sorted_list = []
+    for i in range(len(range_arr)):
+        for j in range(range_arr[i]):
+            sorted_list.append(i + min_value)
+
+    print(sorted_list)
+    '''
+    # Q1
+    n = int(input())
+    arr = []
+    for i in range(n):
+        arr.append(int(input()))
+
+    arr.sort()
+    arr.reverse()
+    for i in arr:
+        print(i, end=' ')
+
+    # 2
+    n = int(input())
+    arr = []
+    for i in range(n):
+        name, score = map(str, input().split())
+        arr.append((name, int(score)))
+
+
+    def setting(data):
+        return data[1]
+
+
+    sorted_list = sorted(arr, key=setting)
+    for i in range(len(sorted_list)):
+        print(sorted_list[i][0], end=' ')
+
+    # Q3
+    n, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    b = list(map(int, input().split()))
+
+    for i in range(k):
+        a_min = a.index(min(a))  # find A's min index
+        b_max = b.index(max(b))  # find B's maz index
+        if(a[a_min]<b[b_max]):
+            a[a_min], b[b_max] = b[b_max], a[a_min] #swip
+
+    print(sum(a))
