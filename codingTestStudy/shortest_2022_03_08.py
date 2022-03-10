@@ -22,7 +22,8 @@ for _ in range(m):
     graph[a].append((b,c))
 
 '''
-1.간단한 다익스트라 알고리즘 
+1.간단한 다익스트라 알고리즘
+  시간 복잡도: O(N^2)
 '''
 # 방문하지 않은 노드 중에서, 가장 최단 거리가 짧은 노드의 번호를 반환
 def get_smallest_node():
@@ -52,7 +53,15 @@ def easy_dijkstra(start):
             if cost < distance[j[0]]:
                 distance[j[0]] = cost
 '''
-1.개선된 다익스트라 알고리즘 
+2.개선된 다익스트라 알고리즘
+  시간복잡도: O(ElogV)
+  E:노드 수 V:간선 수 Heap에 원소 삽입/삭제 시간:O(logN)
+  한 번 처리된 노드는 더 이상 처리되지 않는다. -> while문은 V 이상 반복 X
+  V번 반복될 때마다 각각 자신과 연결된 간선들을 모두 확인
+  -> 현재 우선 순위 큐에서 꺼낸 노드와 연결된 다른 노드들을 확인하는 총횟수 = 회대 간선의 개수
+
+  따라서. 다익스트라 최단 경로 알고리즘은 E개의 원소를 우선순위 큐에 넣었다가 모두 뺴내는 연산과 유사
+  -> O(2ElogE) -> O(ElogE) > O(ElogV^2) ->O(ElogV) 
 '''
 def fast_dijkstra(start):
     # visited 안만듬 pop 된게 방문했다는 의미가 됌
