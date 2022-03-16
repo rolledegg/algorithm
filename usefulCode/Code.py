@@ -36,3 +36,15 @@ for i in range(len(steps)):
         continue
     # 이동
     nowX, nowY = nextX, nextY
+
+'''
+== [[]]*n VS [[] for _ in n] 
+'''
+list1=[[] for _ in range(5)]    # [[], [], [], [], []]
+list2=[[]] * 5                  # [[], [], [], [], []]
+list3=[[] * 5]                  # [[]]
+list4=[[0] * 5]                 # [[0, 0, 0, 0, 0]]
+
+list1[0].append(1)  # [[1], [], [], [], []]
+list2[0].append(1)  # [[1], [1], [1], [1], [1]]
+list4[0][0] = 1     # [[1, 0, 0, 0, 0]]
