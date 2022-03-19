@@ -1,7 +1,7 @@
 # 특정 원소가 속한 집합을 찾기
 '''
 비효율 적인 find function
-시간 복잡도 O(v)
+함수의 시간 복잡도 O(v)
 '''
 def find_set(parent, a):
     #if parent[a] == a:
@@ -15,13 +15,12 @@ def find_set(parent, a):
 ''' 
 효율적인 find function
 parent값을 find하면서 갱신시켜서  
-시간 복잡도가 줄어든다.
+힘수의 시간 복잡도가 줄어든다.
 '''
 def find_set2(parent, a):
     if parent[a] != a:
         parent[a] = find_set2(parent, parent[a])
-        return parent[a]
-    return a
+    return parent[a]
 
 
 # 두 원소가 속한 집합을 합치기
