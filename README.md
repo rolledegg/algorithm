@@ -2,6 +2,7 @@
 ## 이것이 취업을 위한 코딩테스트다 with 파이썬
 복기하면서 문제 소스 분리 + readme 업데이트
 #### 1.Greedy
+- Q.퍼즐 맞추기
 #### 2.Implement
 #### 3.DFS / BFS
 #### 4.Sorting
