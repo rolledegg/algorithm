@@ -7,6 +7,8 @@
 - Q3 1이 될 때까지
 
 #### 2.Implement
+- Q1 왕실으 나이트
+- Q2 게임 개발
 #### 3.DFS / BFS
 #### 4.Sorting
 #### 5.Binaray Sorting
